@@ -1,0 +1,94 @@
+
+
+  /* ---------------- Top Bar ---------------- */
+.top {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent);
+    animation: fadeIn 0.6s ease-in;
+  }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.wrap {
+  width: min(100% - 28px, var(--max));
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 18px rgba(154, 209, 255, 0.45);
+}
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-size: 0.7rem;
+  color: var(--muted);
+  align-items: center;
+
+}
+.nav a,
+.nav button {
+  padding: 6px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.nav a:hover,
+.nav button:hover {
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  color: var(--text);
+}
+.badge {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--text);
+  background: linear-gradient(
+    135deg,
+    rgba(154, 209, 255, 0.18),
+    rgba(198, 255, 221, 0.14)
+  );
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.demo {
+  padding: 6px 9px;
+}

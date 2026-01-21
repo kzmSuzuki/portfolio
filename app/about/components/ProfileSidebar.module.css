@@ -1,0 +1,121 @@
+.sidebar {
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--panel), transparent 65%);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow);
+  padding: 22px 20px 18px;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: var(--r-xl);
+  background: linear-gradient(
+      135deg,
+      rgba(154, 209, 255, 0.22),
+      rgba(198, 255, 221, 0.18)
+    ),
+    var(--panel);
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 8px 0 14px 8px;
+  object-fit: cover;
+}
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 2px;
+}
+
+.handle {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.bio {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 40px 0;
+  white-space: pre-line;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.meta b {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.spacer {
+  height: 10px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  color: var(--text);
+}
+
+.btn,
+.btnPrimary {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+}
+
+.btn {
+  border: 1px solid transparent;
+  background: linear-gradient(
+    135deg,
+    rgba(154, 209, 255, 0.22),
+    rgba(198, 255, 221, 0.18)
+  );
+}
+
+.btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(154, 209, 255, 0.35),
+    rgba(198, 255, 221, 0.28)
+  );
+  border-color: var(--border2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(154, 209, 255, 0.2);
+}

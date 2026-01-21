@@ -1,0 +1,50 @@
+
+.card {
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--panel), transparent 65%);
+    border-radius: var(--r-lg);
+    padding: 16px 28px;
+    min-height: 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    border-color: var(--border2);
+    background: linear-gradient(135deg, var(--panel2), transparent 70%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.08);
+  }
+  .card h3 {
+    margin: 6px 0 4px;
+    font-size: 0.9rem;
+  }
+  .card .desc {
+    margin: 0 0 6px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .kv {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 3px 8px;
+    font-size: 0.7rem;
+    margin-top: 24px;
+    color: var(--muted);
+  }
+  .termBadges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: 3px 7px;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }

@@ -1,0 +1,138 @@
+.timeline {
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--panel), transparent 65%);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow);
+  padding: 22px 24px 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 3px 7px;
+  border-radius: 999px;
+}
+
+.timelineList {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timelineList::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: -20;
+  bottom: -20;
+  width: 3px;
+  background: var(--muted);
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 28px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timelineItem.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -27px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: 4px solid var(--bg2);
+  box-shadow: 0 0 0 2px var(--muted);
+}
+
+.timelineContent {
+  border-radius: var(--r-lg);
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+.timelineContent:hover {
+  transform: translateX(4px);
+}
+
+.timelineMeta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.date {
+  padding: 2px 0;
+  color: var(--muted);
+}
+
+.version {
+  padding: 2px 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.scope {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.summary {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.header h2 span {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 10px;
+}
