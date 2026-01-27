@@ -6,11 +6,13 @@
   overflow: visible;
   position: relative;
 }
+
 .stage[data-phase="open"] {
   min-height: auto;
   height: auto;
   align-items: flex-start;
 }
+
 .terminalWrap {
   width: min(92vw, 640px);
   position: fixed;
@@ -20,10 +22,12 @@
   z-index: 100;
   transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .stage[data-phase="opening"] .terminalWrap {
   width: 38vw;
   transform: translate(-50%, -50%);
 }
+
 .stage[data-phase="open"] .terminalWrap {
   top: 100px;
   left: 10vw;
@@ -36,7 +40,7 @@
     width: min(40vw, calc(100vw - 48px));
     transform: translate(-50%, -50%);
   }
-  
+
   .stage[data-phase="open"] .terminalWrap {
     width: min(40vw, calc(100vw - 48px));
     transform: translate(0, 0);
@@ -46,11 +50,9 @@
 .terminal {
   border: 1px solid var(--border);
   background: linear-gradient(180deg, var(--panel), transparent 65%),
-    radial-gradient(
-      600px 300px at 20% 0%,
+    radial-gradient(600px 300px at 20% 0%,
       rgba(154, 209, 255, 0.1),
-      transparent 60%
-    );
+      transparent 60%);
   border-radius: var(--r-xl);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -108,11 +110,9 @@
 .badge.accent {
   border-color: transparent;
   color: var(--text);
-  background: linear-gradient(
-    135deg,
-    rgba(154, 209, 255, 0.18),
-    rgba(198, 255, 221, 0.14)
-  );
+  background: linear-gradient(135deg,
+      rgba(154, 209, 255, 0.18),
+      rgba(198, 255, 221, 0.14));
 }
 
 .termBody {
@@ -127,22 +127,25 @@
   min-height: 440px;
   max-height: 440px;
   scroll-behavior: smooth;
-  transition: all 400ms ease;
+  transition: opacity 300ms ease, all 400ms ease;
 }
 
 .stage[data-phase="opening"] .termBody {
   min-height: 300px;
   max-height: 300px;
+  transition: opacity 300ms ease, min-height 400ms ease, max-height 400ms ease;
 }
 
 .stage[data-phase="open"] .termBody {
   min-height: 300px;
   max-height: 300px;
+  transition: opacity 300ms ease, min-height 400ms ease, max-height 400ms ease;
 }
 
 .line {
   line-height: 1.6;
   margin: 0 0 8px;
+  white-space: pre;
 }
 
 .promptLine {
@@ -160,19 +163,23 @@
 
 .output {
   color: rgb(198, 255, 221);
+  white-space: pre;
 }
 
 .command {
   color: var(--text);
+  white-space: pre;
 }
 
 .error {
   color: var(--muted);
   opacity: 0.8;
+  white-space: pre;
 }
 
 .warning {
   color: rgb(255, 210, 154);
+  white-space: pre;
 }
 
 .input {
@@ -189,5 +196,24 @@
   color: var(--muted);
   opacity: 0.5;
 }
-  
-  
+
+.arrowBlink {
+  display: inline-block;
+  animation: arrowPulse 3s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    color: var(--muted);
+  }
+
+  50% {
+    opacity: 1;
+    color: rgb(154, 209, 255);
+    text-shadow: 0 0 10px rgba(154, 209, 255, 0.9),
+      0 0 20px rgba(154, 209, 255, 0.5);
+  }
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, JetBrains_Mono, Pixelify_Sans, Jost} from 'next/font/google'
+import { Noto_Sans_JP, JetBrains_Mono, Pixelify_Sans, Jost } from 'next/font/google'
 import './globals.css'
 
 // Noto Sans JP（本文用）
@@ -46,6 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+      </head>
       <body
         className={`${notoSansJP.className} ${notoSansJP.variable} ${jetBrainsMono.variable} ${pixelifySans.variable} ${jost.variable} antialiased`}
       >

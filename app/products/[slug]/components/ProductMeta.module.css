@@ -1,0 +1,110 @@
+.meta {
+  position: sticky;
+  top: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.value {
+  font-size: 0.8rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.statusBadge {
+  font-size: 0.65rem;
+  font-family: var(--mono);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.learnerText,
+.mechanismText {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.techTag {
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.techTag:hover {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border2);
+}
+
+.featuresList {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.featuresList li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.featuresList li::marker {
+  color: var(--accent);
+}

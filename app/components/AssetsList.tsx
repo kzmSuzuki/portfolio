@@ -1,19 +1,19 @@
 import styles from "./AssetsList.module.css"
 
 
-const ASSETS_DATA = 
+const ASSETS_DATA =
 {
-  type: "授業資料",
-  status: "stable",
-  version: "0.1.27",
-  title: "授業スライド（アルゴリズム）",
-  desc: "探索・整列といった基礎から、セキュリティのアルゴリズムまで。",
-  learners: "高専3年生",
-  mechanism: "小単位・復習活用",
+	type: "授業資料",
+	status: "stable",
+	version: "0.1.27",
+	title: "授業スライド（アルゴリズム）",
+	desc: "探索・整列といった基礎から、セキュリティのアルゴリズムまで。",
+	learners: "高専3年生",
+	mechanism: "章単位・復習活用",
 };
 
 export default function AssetsList() {
-	return(
+	return (
 		<div className={styles.cardWrap}>
 			<div className={styles.card}>
 				<div className={styles.termBadges}>
@@ -29,7 +29,7 @@ export default function AssetsList() {
 					<div>{ASSETS_DATA.learners}</div>
 					<div>Mechanism</div>
 					<div>{ASSETS_DATA.mechanism}</div>
-					</div>
+				</div>
 			</div>
 		</div>
 	)

@@ -1,0 +1,143 @@
+.sidebar {
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--panel), transparent 65%);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow);
+  padding: 18px 16px;
+  position: sticky;
+  top: 20px;
+}
+
+.section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filterList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.filterItem:hover {
+  background: var(--panel);
+  border-color: var(--border2);
+}
+
+.filterItem.active {
+  background: var(--panel2);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.count {
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  background: var(--bg2);
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.statusList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.statusItem:hover {
+  background: var(--panel);
+}
+
+.statusItem.active {
+  background: var(--panel2);
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusName {
+  flex: 1;
+}
+
+.langList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.langTag {
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.langTag:hover {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border2);
+}
+
+.langTag.active {
+  background: var(--panel2);
+  color: var(--text);
+  border-color: var(--accent);
+  font-weight: 600;
+}

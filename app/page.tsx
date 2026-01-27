@@ -12,7 +12,7 @@ const Footer = dynamic(() => import("@/app/components/Footer"), {
   ssr: false,
 });
 
-const MainComponent = dynamic(()=> import("@/app/components/MainComponent"), {
+const MainComponent = dynamic(() => import("@/app/components/MainComponent"), {
   ssr: false,
 });
 
@@ -29,6 +29,7 @@ export default function Page() {
   // 初期状態は常に"locked"（SSRとクライアントで一致させる）
   const [phase, setPhase] = useState<Phase>("locked");
   const [mounted, setMounted] = useState(false);
+  const [isConceptVisible, setIsConceptVisible] = useState(false);
 
   // マウント後にlocalStorageから読み取る
   useEffect(() => {
@@ -49,9 +50,14 @@ export default function Page() {
   return (
     <>
       {phase === "open" && <Header />}
-      {phase === "open" && <MainComponent />}
+      {phase === "open" && <MainComponent onConceptVisible={setIsConceptVisible} />}
       {phase === "open" && <Footer />}
-      <TerminalGate phase={phase} setPhase={setPhase} prefetch={prefetch} />
+      <TerminalGate
+        phase={phase}
+        setPhase={setPhase}
+        prefetch={prefetch}
+        showConceptMode={isConceptVisible}
+      />
 
     </>
   );
