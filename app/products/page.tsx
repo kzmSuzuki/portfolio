@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -11,7 +11,8 @@ import styles from "./page.module.css";
 export type FilterType = "all" | "products" | "assets";
 export type StatusType = "active" | "beta" | "development";
 
-export default function ProductsPage() {
+// useSearchParams()を使用するコンポーネントを分離
+function ProductsContent() {
     const searchParams = useSearchParams();
     const filterParam = searchParams.get("filter") as FilterType | null;
 
@@ -31,22 +32,38 @@ export default function ProductsPage() {
     }, []);
 
     return (
+        <main className={`${styles.main} ${mounted ? styles.fadeIn : ""}`}>
+            <div className={styles.layout}>
+                <ProductList
+                    filterType={filterType}
+                    selectedStatus={selectedStatus}
+                />
+                <ProductSidebar
+                    filterType={filterType}
+                    setFilterType={setFilterType}
+                    selectedStatus={selectedStatus}
+                    setSelectedStatus={setSelectedStatus}
+                />
+            </div>
+        </main>
+    );
+}
+
+export default function ProductsPage() {
+    return (
         <>
             <Header />
-            <main className={`${styles.main} ${mounted ? styles.fadeIn : ""}`}>
-                <div className={styles.layout}>
-                    <ProductList
-                        filterType={filterType}
-                        selectedStatus={selectedStatus}
-                    />
-                    <ProductSidebar
-                        filterType={filterType}
-                        setFilterType={setFilterType}
-                        selectedStatus={selectedStatus}
-                        setSelectedStatus={setSelectedStatus}
-                    />
-                </div>
-            </main>
+            <Suspense fallback={
+                <main className={styles.main}>
+                    <div className={styles.layout}>
+                        <div style={{ padding: '40px', textAlign: 'center', color: 'var(--muted)' }}>
+                            Loading...
+                        </div>
+                    </div>
+                </main>
+            }>
+                <ProductsContent />
+            </Suspense>
             <Footer />
         </>
     );
