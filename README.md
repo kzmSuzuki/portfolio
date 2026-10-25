@@ -1,3 +1,14 @@
+## Runtime security requirement
+
+Use Bun 1.4.4 or newer for development, builds, and production. This fixes
+CVE-2026-111497 in the bundled Brotli decoder. `packageManager` and
+`.tool-versions` pin the reviewed release; they do not upgrade an installed Bun.
+Run `bun --version` before `bun install --frozen-lockfile` and `bun run build`.
+Rebuild and redeploy existing deployments and compiled executables after upgrading.
+If the hosting platform runs Node.js, use a patched version allowed by `engines.node`.
+
+Upstream advisory: https://github.com/oven-sh/bun/security/advisories/GHSA-663w-cv8g-jj2p
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
